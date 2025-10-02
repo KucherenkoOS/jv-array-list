@@ -42,9 +42,11 @@ public class ArrayList<T> implements List<T> {
     }
 
     @Override
-    public void set(T value, int index) {
+    public T set(T value, int index) {
         checkIndex(index);
+        T old = elements[index];
         elements[index] = value;
+        return old;
     }
 
     @Override
